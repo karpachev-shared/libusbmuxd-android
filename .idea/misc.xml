@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MakefileSettings">
+    <option name="linkedExternalProjectsSettings">
+      <MakefileProjectSettings>
+        <option name="buildDirectory" value="build" />
+        <option name="buildOptions" value="--makefile=Makefile" />
+        <option name="buildSystemName" value="GNU Autotools" />
+        <option name="buildTarget" value="check" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+          </set>
+        </option>
+        <option name="preConfigureCommands" value="#!/bin/sh&#10;#&#10;# GNU Autotools template, feel free to customize.&#10;#&#10;export TARGET=aarch64-linux-android&#10;export libplist_CFLAGS=&quot;-I/Volumes/Development/Android/other/libplist/include&quot;&#10;export libplist_LIBS=&quot;-L/Volumes/Development/Android/other/libplist/build/src/.libs -lplist-2.0&quot;&#10;export limd_glue_CFLAGS=&quot;-I/Volumes/Development/Android/other/libimobiledevice-glue/include&quot;&#10;export limd_glue_LIBS=&quot;-L/Volumes/Development/Android/other/libimobiledevice-glue/build/src/.libs -limobiledevice-glue-1.0&quot;&#10;which autoreconf &gt;/dev/null &amp;&amp; autoreconf --install --force --verbose &quot;${PROJECT_DIR:-..}&quot; 2&gt;&amp;1; /bin/sh &quot;${PROJECT_DIR:-..}/configure&quot; --host=$TARGET" />
+        <option name="switches" value="--makefile=Makefile " />
+        <option name="version" value="2" />
+      </MakefileProjectSettings>
+    </option>
+  </component>
+  <component name="MakefileWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
+</project>

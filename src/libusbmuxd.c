@@ -151,6 +151,17 @@ static usbmuxd_device_info_t *devices_find(uint32_t handle)
 	return NULL;
 }
 
+#ifdef __ANDROID__
+
+static char socket_path[200];
+
+USBMUXD_API void libusbmuxd_set_socket_path(const char *app_dir)
+{
+    strcpy(socket_path, app_dir);
+    strcat(socket_path, "/usbmuxd.sock");
+}
+#endif
+
 /**
  * Creates a socket connection to usbmuxd.
  * For Mac/Linux it is a unix domain socket,
@@ -215,6 +226,8 @@ static int connect_usbmuxd_socket()
 	}
 #if defined(WIN32) || defined(__CYGWIN__)
 	res = socket_connect("127.0.0.1", USBMUXD_SOCKET_PORT);
+#elif defined (__ANDROID__)
+    res = socket_connect_unix(socket_path);
 #else
 	res = socket_connect_unix(USBMUXD_SOCKET_FILE);
 #endif
